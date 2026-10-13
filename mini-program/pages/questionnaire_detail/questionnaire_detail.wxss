@@ -1,0 +1,144 @@
+.questionnaire-container {
+    padding: 20rpx 30rpx;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+  }
+  
+  /* 进度条样式 - 匹配图片 */
+  .progress-container {
+    margin-bottom: 40rpx;
+    padding-top: 30rpx;
+  }
+  
+  .progress-text {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+    display: block;
+  }
+  
+  .progress-bar {
+    height: 10rpx;
+    background-color: #e0e0e0;
+    border-radius: 5rpx;
+    overflow: hidden;
+  }
+  
+  .progress-inner {
+    height: 100%;
+    background-color: #1890ff;
+    border-radius: 5rpx;
+    transition: width 0.3s ease;
+  }
+  
+  /* 问题内容样式 - 匹配图片 */
+  .question-content {
+    background: white;
+    border-radius: 16rpx;
+    padding: 30rpx;
+    box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding-bottom: 20rpx;
+  }
+  
+  .question-index {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .question-meta {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  .meta-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+  }
+  
+  .question-text {
+    font-size: 34rpx;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 50rpx;
+  }
+  
+  /* 选项样式 - 匹配图片的蓝色边框按钮 */
+  .options-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .option-item {
+    background: #ffffff;
+    border: 2rpx solid #1890ff;
+    border-radius: 10rpx;
+    padding: 25rpx;
+    margin-bottom: 20rpx;
+    color: #1890ff;
+    font-size: 32rpx;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  
+  .option-selected {
+    background-color: #1890ff;
+    color: white;
+    transform: translateY(-2rpx);
+    box-shadow: 0 4rpx 10rpx rgba(24, 144, 255, 0.2);
+  }
+  
+  .option-text {
+    line-height: 1.4;
+  }
+  
+  /* 导航按钮 */
+  .navigation-buttons {
+    position: fixed;
+    bottom: 50rpx;
+    left: 0;
+    right: 0;
+    padding: 0 30rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-btn {
+    height: 80rpx;
+    min-width: 220rpx;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    margin: 0;
+  }
+  
+  .prev-btn {
+    background: #f5f7fa;
+    color: #666;
+    border: 1rpx solid #e0e0e0;
+  }
+  
+  .next-btn {
+    background: #1890ff;
+    color: white;
+  }
+  
+  .submit-btn {
+    background: #07c160;
+    color: white;
+    width: 100%;
+  }
+  
+  .prev-btn[disabled], .next-btn[disabled], .submit-btn[disabled] {
+    opacity: 0.5;
+  }

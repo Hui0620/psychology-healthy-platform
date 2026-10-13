@@ -1,0 +1,69 @@
+# 本地开发环境配置（application.yml 默认激活 local profile）
+# 敏感信息请通过环境变量注入，不要提交真实密钥
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/RecordPlatform?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: ${SPRING_DATASOURCE_USERNAME:root}
+      password: ${SPRING_DATASOURCE_PASSWORD:root}
+      initial-size: 5
+      min-idle: 5
+      max-active: 40
+
+  mail:
+    host: ${SPRING_MAIL_HOST:smtp.qq.com}
+    username: ${SPRING_MAIL_USERNAME:}
+    password: ${SPRING_MAIL_PASSWORD:}
+    port: 465
+    properties:
+      from: ${SPRING_MAIL_USERNAME:}
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+
+  rabbitmq:
+    addresses: ${SPRING_RABBITMQ_ADDRESSES:localhost:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:guest}
+    password: ${SPRING_RABBITMQ_PASSWORD:guest}
+
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      timeout: 5000
+      username: ${SPRING_DATA_REDIS_USERNAME:}
+      password: ${SPRING_DATA_REDIS_PASSWORD:}
+
+minio:
+  endpoint: http://localhost:9000
+  access-key: ${MINIO_ACCESS_KEY:minioadmin}
+  secret-key: ${MINIO_SECRET_KEY:minioadmin}
+  bucket-name: forum
+
+dubbo:
+  application:
+    name: RecordPlatform_Main
+    logger: slf4j
+    qos-port: 22330
+    check-serializable: false
+  protocol:
+    name: tri
+    payload: 104857600 # 100MB
+  registry:
+    register-mode: instance
+    address: nacos://localhost:8848?username=${NACOS_USERNAME:nacos}&password=${NACOS_PASSWORD:nacos}
+  consumer:
+    timeout: 30000
+    check: false # 本地开发时允许底座服务未启动
+
+logging:
+  level:
+    root: INFO
+    cn.flying: DEBUG

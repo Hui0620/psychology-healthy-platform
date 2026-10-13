@@ -1,0 +1,40 @@
+{
+    "pages": [
+      "pages/login/login",
+      "pages/index/index",
+      "pages/detail/detail",
+      "pages/comments/comments",
+      "pages/community/community",
+      "pages/compose/compose",
+      "pages/advice/advice",
+      "pages/questionnaire/questionnaire",
+      "pages/appointment/appointment",
+      "pages/questionnaire_detail/questionnaire_detail" 
+    ],
+    "window": {
+      "navigationBarTitleText": "心理健康监测",
+      "navigationBarBackgroundColor": "#07c160",
+      "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+      "color": "#666",
+      "selectedColor": "#07c160",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "/images/tab_home.png",
+          "selectedIconPath": "/images/tab_home_active.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/community/community",
+          "iconPath": "/images/tab_community.png",
+          "selectedIconPath": "/images/tab_community_active.png",
+          "text": "社区"
+        }
+      ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+  }

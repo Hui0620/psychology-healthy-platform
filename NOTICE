@@ -1,0 +1,29 @@
+大学生心理健康「家校医」一体化平台
+Copyright 2025-2026 The psychology-healthy-platform authors
+
+本项目基于 Apache License 2.0 发布（见 LICENSE）。
+
+--------------------------------------------------------------------------------
+第三方组件与数据来源
+--------------------------------------------------------------------------------
+
+1. RecordPlatform（Apache License 2.0）
+   https://github.com/SoarCollab/RecordPlatform
+   本项目的区块链存证与分布式存储底座基于该协作项目演进而来。
+   后端通过 Dubbo 依赖其 platform-api / platform-fisco / platform-storage 服务。
+
+2. PFLlib（GPL-2.0，仅用于实验，未随本仓库分发）
+   https://github.com/TsingZ0/PFLlib
+   Zhang et al., "PFLlib: A Beginner-Friendly and Comprehensive Personalized
+   Federated Learning Library and Benchmark", arXiv:2312.04992
+   联邦学习实验基于该库开展，详见 docs/FEDERATED_LEARNING.md。
+
+3. DIU Extended Mental Health Dataset（CC BY 4.0）
+   位于 llm-finetune/dataset/diu-extended-mental-health/
+   仅用于构建心理健康领域指令微调数据，相关许可与伦理声明见其目录内文档。
+
+4. DeepSeek-R1-Distill-Qwen-1.5B
+   大模型微调基座模型，遵循其原始许可协议。
+
+5. Element Plus / Apache ECharts / Spring Boot 等开源依赖
+   遵循各自上游许可协议。

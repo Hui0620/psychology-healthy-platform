@@ -1,0 +1,56 @@
+<view class="community-container">
+  <!-- 搜索区域 -->
+  <view class="search-bar">
+    <input placeholder="搜索心理健康相关话题" class="search-input" />
+    <image src="/images/search.png" class="search-icon" />
+  </view>
+  
+  <!-- 分类导航 -->
+  <view class="category-tabs">
+    <block wx:for="{{categories}}" wx:key="id">
+      <view 
+        class="tab-item {{activeTabId === item.id ? 'active' : ''}}"
+        bindtap="switchTab" data-id="{{item.id}}"
+      >
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  
+  <!-- 帖子列表 -->
+  <view class="posts-list">
+    <block wx:for="{{filteredPosts}}" wx:key="id">
+      <view class="post-card">
+        <view class="post-header">
+          <image src="{{item.user.avatar}}" class="avatar" />
+          <view class="user-info">
+            <text class="username">{{item.user.name}}</text>
+            <text class="role-tag">{{item.user.role}}</text>
+            <text class="post-time">{{item.time}}</text>
+          </view>
+        </view>
+        
+        <text class="post-title">{{item.title}}</text>
+        
+        <text class="post-content">{{item.content}}</text>
+        
+        <view class="post-footer">
+          <view class="action">
+            <image src="/images/heart.png" class="action-icon" />
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="action">
+            <image src="/images/comment.png" class="action-icon" />
+            <text>{{item.comments}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 发布按钮 -->
+  <view class="compose-btn" bindtap="navigateToCompose">
+    <image src="/images/icon_compose.png" class="compose-icon" />
+    <text>发布帖子</text>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <view class="header">
+    <text>你好，{{userType === 'parent' ? '家长' : '辅导员'}}</text>
+    <text>今日日期: {{currentDate}}</text>
+  </view>
+
+  <view class="card-list">
+    <block wx:for="{{students}}" wx:key="id">
+      <view class="student-card" bindtap="viewDetail" data-id="{{item.id}}">
+        <image src="{{item.avatar}}" class="avatar" />
+        <view class="info">
+          <text class="name">{{item.name}}</text>
+          <text class="class">班级: {{item.class}}</text>
+          <view class="status">
+            <text>心理状态: </text>
+            <text class="tag {{getStatusClass(item.status)}}">{{item.status}}</text>
+          </view>
+        </view>
+        <image src="/images/arrow.png" class="arrow" />
+      </view>
+    </block>
+  </view>
+</view>

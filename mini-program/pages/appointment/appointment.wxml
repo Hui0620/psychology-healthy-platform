@@ -1,0 +1,81 @@
+<!-- 预约医生页面 -->
+<view class="appointment-container">
+  <view class="header">
+    <image src="/images/back.png" class="back-btn" bindtap="navigateBack" />
+    <text class="title">预约心理医生</text>
+  </view>
+  
+  <view class="doctor-list">
+    <view class="doctor-card" bindtap="bookDoctor" data-id="1">
+      <image src="/images/doctor_wang.png" class="doctor-avatar" />
+      <view class="doctor-info">
+        <view class="doctor-header">
+          <text class="doctor-name">王医生</text>
+          <text class="doctor-title">心理咨询师</text>
+        </view>
+        <text class="doctor-specialty">擅长：青少年心理问题咨询</text>
+        <view class="doctor-rating">
+          <text class="rating-text">评分：4.7</text>
+          <view class="stars">
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_half.png" class="star" />
+          </view>
+        </view>
+      </view>
+      <view class="appointment-status">
+        <text class="available">可预约</text>
+      </view>
+    </view>
+    
+    <view class="doctor-card" bindtap="bookDoctor" data-id="2">
+      <image src="/images/doctor_li.png" class="doctor-avatar" />
+      <view class="doctor-info">
+        <view class="doctor-header">
+          <text class="doctor-name">李教授</text>
+          <text class="doctor-title">心理学教授</text>
+        </view>
+        <text class="doctor-specialty">擅长：学业压力、焦虑处理</text>
+        <view class="doctor-rating">
+          <text class="rating-text">评分：4.9</text>
+          <view class="stars">
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+          </view>
+        </view>
+      </view>
+      <view class="appointment-status">
+        <text class="available">可预约</text>
+      </view>
+    </view>
+    
+    <view class="doctor-card" bindtap="bookDoctor" data-id="3">
+      <image src="/images/doctor_zhang.png" class="doctor-avatar" />
+      <view class="doctor-info">
+        <view class="doctor-header">
+          <text class="doctor-name">张医生</text>
+          <text class="doctor-title">心理治疗师</text>
+        </view>
+        <text class="doctor-specialty">擅长：人际关系处理</text>
+        <view class="doctor-rating">
+          <text class="rating-text">评分：4.6</text>
+          <view class="stars">
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_full.png" class="star" />
+            <image src="/images/star_empty.png" class="star" />
+          </view>
+        </view>
+      </view>
+      <view class="appointment-status">
+        <text class="unavailable">已满</text>
+      </view>
+    </view>
+  </view>
+</view>

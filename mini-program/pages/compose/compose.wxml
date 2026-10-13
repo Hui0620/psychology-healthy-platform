@@ -1,0 +1,61 @@
+<view class="compose-container">
+  <view class="form-item">
+    <input 
+      value="{{title}}" 
+      bindinput="onTitleInput" 
+      placeholder="输入标题（最多50字）" 
+      maxlength="50" 
+      class="title-input"
+    />
+  </view>
+  
+  <view class="form-item">
+    <textarea 
+      value="{{content}}" 
+      bindinput="onContentInput" 
+      placeholder="在这里写下您的帖子的内容..." 
+      maxlength="1000" 
+      class="content-input"
+    />
+  </view>
+  
+  <!-- 添加图片功能 -->
+  <view class="image-picker">
+    <text class="tip">添加图片（最多3张）</text>
+    <view class="images-container">
+      <block wx:for="{{images}}" wx:key="index">
+        <view class="image-preview">
+          <image src="{{item}}" class="image" />
+          <image src="/images/close.png" class="close" bindtap="removeImage" data-index="{{index}}" />
+        </view>
+      </block>
+      <view wx:if="{{images.length < 3}}" class="add-btn" bindtap="selectImage">
+        <image src="/images/icon_camera.png" class="camera-icon" />
+        <text>添加图片</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 分类选择 -->
+  <view class="form-item">
+    <picker 
+      bindchange="bindCategoryChange" 
+      range="{{categories}}" 
+      value="{{categoryIndex}}"
+      class="category-picker"
+    >
+      <view class="picker-label">
+        选择分类：<text class="category-name">{{category || '请选择'}}</text>
+      </view>
+    </picker>
+  </view>
+  
+  <!-- 匿名提示 -->
+  <view class="anonymous-tip">
+    <image src="/images/shield.png" class="shield-icon" />
+    <text>家长和辅导员将自动匿名发布</text>
+  </view>
+  
+  <!-- 发布按钮 -->
+  <button class="submit-btn" bindtap="submitPost">发布</button>
+</view>

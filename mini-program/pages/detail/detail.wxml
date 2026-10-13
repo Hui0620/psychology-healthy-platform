@@ -1,0 +1,116 @@
+<view class="detail-container">
+  <!-- 最新评估报告区域 -->
+  <view class="report-section">
+    <view class="section-title">
+      <text>最新评估报告</text>
+    </view>
+    
+    <view class="report-content">
+      <view class="report-item">
+        <text class="item-label">评估日期</text>
+        <text class="item-value">2023-05-15</text>
+      </view>
+      
+      <view class="report-item">
+        <text class="item-label">总体评分</text>
+        <text class="item-value score">82/100</text>
+      </view>
+      
+      <view class="report-item">
+        <text class="item-label">情绪状态</text>
+        <text class="item-value">稳定</text>
+      </view>
+      
+      <view class="report-item">
+        <text class="item-label">压力指数</text>
+        <text class="item-value">中等</text>
+      </view>
+      
+      <view class="counselor-comment">
+        <text class="comment-label">辅导员评语:</text>
+        <text class="comment-text">
+          该生近期表现稳定，课堂参与积极，与同学关系良好。建议继续保持当前状态，家长可多关注睡眠质量。
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 匿名评论区域 -->
+  <view class="comment-section">
+    <view class="section-title">
+      <text>匿名评论</text>
+    </view>
+    
+    <view class="comment-input-area">
+      <textarea 
+        placeholder="请留下您的匿名评论（最多200字）" 
+        class="comment-input"
+        maxlength="200"
+        value="{{newComment}}"
+        bindinput="onCommentInput"
+      ></textarea>
+      
+      <view class="comment-info">
+        <text class="char-count">{{commentLength}}/200</text>
+        <button class="submit-btn" bindtap="submitComment">提交评论</button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 历史评论区域 -->
+  <view class="history-section">
+    <view class="section-title">
+      <text>历史评论</text>
+    </view>
+    
+    <view class="comments-list">
+      <!-- 第一条历史评论 -->
+      <view class="comment-item">
+        <view class="comment-header">
+          <image src="/images/anonymous.png" class="anonymous-icon" />
+          <view class="comment-meta">
+            <text class="comment-date">2023-05-16</text>
+            <text class="comment-type">学生家长</text>
+          </view>
+        </view>
+        <text class="comment-content">
+          学生状态很不错，希望能一直保持，加油！
+        </text>
+      </view>
+      
+      <!-- 第二条历史评论 -->
+      <view class="comment-item">
+        <view class="comment-header">
+          <image src="/images/anonymous.png" class="anonymous-icon" />
+          <view class="comment-meta">
+            <text class="comment-date">2023-05-15</text>
+            <text class="comment-type">心理顾问</text>
+          </view>
+        </view>
+        <text class="comment-content">
+          课堂活跃是好事，继续加油，期待更出色表现！
+        </text>
+      </view>
+      
+      <!-- 第三条历史评论 -->
+      <view class="comment-item">
+        <view class="comment-header">
+          <image src="/images/anonymous.png" class="anonymous-icon" />
+          <view class="comment-meta">
+            <text class="comment-date">2023-05-14</text>
+            <text class="comment-type">班级辅导员</text>
+          </view>
+        </view>
+        <text class="comment-content">
+          注意到最近作业完成质量提高了，进步很大！
+        </text>
+      </view>
+      
+      <!-- 查看更多按钮 -->
+      <view class="view-more">
+        <text>查看更多评论</text>
+        <image src="/images/arrow-right.png" class="arrow-icon" />
+      </view>
+    </view>
+  </view>
+</view>

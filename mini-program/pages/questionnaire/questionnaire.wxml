@@ -1,0 +1,53 @@
+<view class="questionnaire-container">
+  <view class="header">
+    <image src="/images/back.png" class="back-btn" bindtap="navigateBack" />
+    <text class="title">心理问卷</text>
+  </view>
+  
+  <view class="questionnaire-list">
+    <view class="questionnaire-card" bindtap="startQuestionnaire" data-id="1">
+      <image src="/images/questionnaire_depression.png" class="card-image" />
+      <view class="card-content">
+        <text class="card-title">抑郁症筛查量表(PHQ-9)</text>
+        <text class="card-desc">评估你最近两周的情绪状况，识别可能的抑郁症状</text>
+        <view class="card-info">
+          <text class="info-item">9道题</text>
+          <text class="info-item">约3分钟</text>
+          <text class="info-item">专业评估</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="questionnaire-card" bindtap="startQuestionnaire" data-id="2">
+      <image src="/images/questionnaire_anxiety.png" class="card-image" />
+      <view class="card-content">
+        <text class="card-title">广泛性焦虑量表(GAD-7)</text>
+        <text class="card-desc">评估焦虑症状的严重程度及其对你的影响</text>
+        <view class="card-info">
+          <text class="info-item">7道题</text>
+          <text class="info-item">约2分钟</text>
+          <text class="info-item">专业建议</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="questionnaire-card" bindtap="startQuestionnaire" data-id="3">
+      <image src="/images/questionnaire_stress.png" class="card-image" />
+      <view class="card-content">
+        <text class="card-title">压力量表(PSS)</text>
+        <text class="card-desc">评估生活中的压力源及其对你的影响程度</text>
+        <view class="card-info">
+          <text class="info-item">10道题</text>
+          <text class="info-item">约3分钟</text>
+          <text class="info-item">减压指导</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 添加完成提示 -->
+    <view class="completed-message" wx:if="{{hasCompletedTest}}">
+      <image src="/images/icon_check.png" class="check-icon" />
+      <text class="message-text">已完成心理测评</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+/* pages/comments/comments.wxss */
+.comments-container {
+    padding: 30rpx;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+  }
+  
+  .back-btn {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 20rpx;
+  }
+  
+  .title {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-input-area {
+    background-color: white;
+    border-radius: 16rpx;
+    padding: 25rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .comment-textarea {
+    width: 100%;
+    min-height: 150rpx;
+    font-size: 28rpx;
+    line-height: 1.5;
+  }
+  
+  .comment-submit-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20rpx;
+  }
+  
+  .char-count {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .submit-btn {
+    background-color: #07c160;
+    color: white;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    padding: 8rpx 25rpx;
+    margin: 0;
+  }
+  
+  .submit-btn[disabled] {
+    background-color: #cccccc;
+  }
+  
+  .comment-list {
+    background-color: white;
+    border-radius: 16rpx;
+    padding: 25rpx;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25rpx;
+  }
+  
+  .section-title image {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 15rpx;
+  }
+  
+  .section-title text {
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .comment-item {
+    padding: 25rpx 0;
+    border-bottom: 1rpx solid #f0f0f0;
+  }
+  
+  .comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rpx;
+  }
+  
+  .anonymous-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 15rpx;
+  }
+  
+  .comment-time {
+    font-size: 26rpx;
+    color: #999;
+  }
+  
+  .comment-content {
+    font-size: 28rpx;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15rpx;
+  }
+  
+  .comment-status {
+    font-size: 24rpx;
+    padding: 4rpx 12rpx;
+    border-radius: 20rpx;
+    display: inline-block;
+  }
+  
+  .comment-status.pending {
+    background-color: #fff7e6;
+    color: #fa8c16;
+  }
+  
+  .comment-status.approved {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  
+  .empty-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50rpx 0;
+    color: #999;
+  }
+  
+  .empty-icon {
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: 20rpx;
+    opacity: 0.5;
+  }

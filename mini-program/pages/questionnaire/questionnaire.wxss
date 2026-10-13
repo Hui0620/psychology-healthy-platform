@@ -1,0 +1,128 @@
+.questionnaire-container {
+    padding: 30rpx;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40rpx;
+    padding-top: 40rpx;
+  }
+  
+  .back-btn {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+  }
+  
+  .title {
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .questionnaire-list {
+    margin-top: 20rpx;
+  }
+  
+  .questionnaire-card {
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-bottom: 30rpx;
+    box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .questionnaire-card:active {
+    transform: translateY(-5rpx);
+    box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 300rpx;
+    background-color: #e4f2ff;
+  }
+  
+  .card-content {
+    padding: 25rpx;
+  }
+  
+  .card-title {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #1a73e8;
+    display: block;
+    margin-bottom: 15rpx;
+  }
+  
+  .card-desc {
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 20rpx;
+  }
+  
+  .card-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .info-item {
+    font-size: 24rpx;
+    color: #888;
+    background: #f0f5ff;
+    padding: 6rpx 16rpx;
+    border-radius: 30rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  .completed-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40rpx 0;
+    padding: 20rpx;
+    background: #e8f4e8;
+    border-radius: 12rpx;
+  }
+  
+  .check-icon {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 10rpx;
+  }
+  
+  .message-text {
+    font-size: 28rpx;
+    color: #07c160;
+    font-weight: 500;
+  }
+
+  /* 添加完成提示样式 */
+.completed-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40rpx;
+    padding: 20rpx;
+    background-color: #e8f5e9;
+    border-radius: 12rpx;
+  }
+  
+  .check-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+  }
+  
+  .message-text {
+    font-size: 28rpx;
+    color: #4caf50;
+  }
