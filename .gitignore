@@ -54,6 +54,9 @@ miniprogram_npm/
 runs/
 outputs/
 
+# 例外：FISCO BCOS 合约编译产物（.bin）需要入库
+!blockchain/**/*.bin
+
 # ===================== 媒体与压缩包 =====================
 *.mp4
 *.mov

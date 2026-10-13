@@ -11,6 +11,8 @@ Copyright 2025-2026 The psychology-healthy-platform authors
    https://github.com/SoarCollab/RecordPlatform
    本项目的区块链存证与分布式存储底座基于该协作项目演进而来。
    后端通过 Dubbo 依赖其 platform-api / platform-fisco / platform-storage 服务。
+   仓库中的 blockchain/contracts/（Storage.sol、Sharing.sol 及 ABI/BIN）与
+   blockchain/fisco-service/ 对应该项目的 platform-fisco 模块，由本项目组共同维护。
 
 2. PFLlib（GPL-2.0，仅用于实验，未随本仓库分发）
    https://github.com/TsingZ0/PFLlib
@@ -27,3 +29,9 @@ Copyright 2025-2026 The psychology-healthy-platform authors
 
 5. Element Plus / Apache ECharts / Spring Boot 等开源依赖
    遵循各自上游许可协议。
+
+6. 区块链学习与部署材料（blockchain/docs/）
+   由本项目组整理（区块链基础知识、操作实践、智能合约部署与 Java 开发、
+   FISCO BCOS / WeBase 安装、Ubuntu / WSL 环境安装），仅用于学习交流。
+   其中的 docker-compose-linux-x86_64 与 wsl_update_x64.msi 属第三方安装二进制，
+   未纳入版本库，请从官方渠道获取。

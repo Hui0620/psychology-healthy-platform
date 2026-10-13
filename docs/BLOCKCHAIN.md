@@ -13,6 +13,9 @@
 
 ## 2. 合约设计（Solidity）
 
+> 合约源码与编译产物位于 [`blockchain/contracts/`](../blockchain/contracts/)（含 ABI、国密/非国密两套 BIN），
+> Java 调用服务位于 [`blockchain/fisco-service/`](../blockchain/fisco-service/)，详见 [blockchain/README.md](../blockchain/README.md)。
+
 ### `Storage.sol` — 文件存证主合约
 
 ```solidity
@@ -88,10 +91,22 @@ sequenceDiagram
 
 ## 6. 部署要点
 
-1. 搭建 FISCO BCOS 链（参考 `docs/assets/` 中的区块链材料与官方 build_chain 脚本）；
-2. 使用控制台或 Java SDK 部署 `Storage.sol` / `Sharing.sol`，记录合约地址与 ABI；
-3. 在区块链服务中配置节点地址、群组 ID、合约地址；
-4. 启动 `platform-fisco` 服务并注册到 Nacos；
+1. 搭建 FISCO BCOS 链：见 [`blockchain/docs/04-fisco-bcos-and-webase-setup.docx`](../blockchain/docs/04-fisco-bcos-and-webase-setup.docx)（Windows 环境另见 `05-ubuntu-wsl-setup.docx`）；
+2. 使用控制台或 Solidity 编译器编译 `Storage.sol` / `Sharing.sol`，部署后记录合约地址；
+3. 把合约地址、节点地址、群组 ID 填入 `blockchain/fisco-service/src/main/resources/application.yml`；
+4. 启动区块链服务（`mvn clean package && java -jar target/platform-fisco-*.jar`），以 Dubbo 注册到 Nacos；
 5. 后端通过 Dubbo 调用完成存证，无需直接依赖 web3j。
+
+详细步骤见 [blockchain/README.md](../blockchain/README.md)。
+
+## 7. 学习材料
+
+| 文件 | 内容 |
+| --- | --- |
+| `blockchain/docs/01-blockchain-fundamentals.pptx` | 区块链基础知识 |
+| `blockchain/docs/02-blockchain-operations.pptx` | 区块链操作实践 |
+| `blockchain/docs/03-smart-contract-deployment-and-java-dev.docx` | 智能合约部署及 Java 开发 |
+| `blockchain/docs/04-fisco-bcos-and-webase-setup.docx` | FISCO BCOS 与 WeBase 安装部署 |
+| `blockchain/docs/05-ubuntu-wsl-setup.docx` | Ubuntu / WSL 环境安装 |
 
 > 未部署链环境时，其余功能（上传、审计、联邦任务展示）不受影响，仅存证状态会保持为「未上链」。

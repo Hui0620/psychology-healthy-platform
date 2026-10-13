@@ -58,10 +58,11 @@
 
 ### ⛓️ 区块链存证：不可篡改的责任链
 
-- 基于 **FISCO BCOS** 国产联盟链，Solidity 合约 `Storage.sol` / `Sharing.sol`。
+- 基于 **FISCO BCOS** 国产联盟链，Solidity 合约 [`Storage.sol`](./blockchain/contracts/Storage.sol) / [`Sharing.sol`](./blockchain/contracts/Sharing.sol)，配套 [Java 调用服务](./blockchain/fisco-service/)。
 - 心理评估文件、转诊单据的 **fileHash** 与 **contractHash（交易哈希）** 落库并上链。
 - 提供**带过期时间的分享码**（≤30 天）机制，实现跨机构可控共享。
 - 内置**区块链监控面板**：多群组切换、区块高度、交易数、模型运行情况实时展示。
+- 随仓库附带[区块链学习与部署材料](./blockchain/docs/)（基础知识、操作实践、合约部署与 Java 开发、FISCO/WeBase 安装）。
 
 ### 🧠 AI 辅助：大模型 + 多模型诊断
 
@@ -161,9 +162,13 @@ psychology-healthy-platform/
 │   ├── backend-api/            # Dubbo 接口定义
 │   ├── backend-common/         # 公共常量与工具类
 │   └── db/migration/           # 建表、视图、存储过程、审计配置
+├── blockchain/                 # 区块链存证（FISCO BCOS）
+│   ├── contracts/              # Storage.sol / Sharing.sol 及 ABI、国密·非国密 BIN
+│   ├── fisco-service/          # 合约调用 Java 服务（Dubbo Provider，:8091）
+│   └── docs/                   # 区块链学习与部署材料（PPT / 部署文档）
 ├── mini-program/               # 微信小程序（学生 / 家长 / 辅导员）
 ├── llm-finetune/               # 大模型微调（QLoRA 脚本 + 心理健康指令数据集）
-├── federated-learning/         # 联邦学习实验说明与运行结果
+├── federated-learning/         # 联邦学习实验脚本（PFLlib 多算法对比）与说明
 ├── docs/                       # 项目文档与申报材料
 │   ├── ARCHITECTURE.md
 │   ├── GETTING_STARTED.md
@@ -278,7 +283,15 @@ mysql -u root -p RecordPlatform < platform-backend/db/migration/V1.0_Audit.sql
 
 基于开源算法库 **PFLlib**（34 种 tFL/pFL 算法：FedAvg、FedProx、MOON、FedBN、Ditto、pFedMe …）开展实验：
 机构本地训练 → 只交换模型参数 → 服务端聚合 → 下发全局模型 → 客户端再做个性化适配。
-实验输出与复现命令见 [docs/FEDERATED_LEARNING.md](./docs/FEDERATED_LEARNING.md) 与 `federated-learning/results/`。
+
+一键复现对比实验（FedAvg / FedProx / pFedMe / PerAvg / FedFomo / FedAMP / FedMTL，含 50% 机构掉线的鲁棒性对照）：
+
+```bash
+git clone https://github.com/TsingZ0/PFLlib.git && cd PFLlib/system
+bash <仓库路径>/federated-learning/experiments.sh mnist cnn 0
+```
+
+脚本见 [`federated-learning/experiments.sh`](./federated-learning/experiments.sh)，方案说明见 [docs/FEDERATED_LEARNING.md](./docs/FEDERATED_LEARNING.md)。
 
 ### 8.2 领域大模型微调
 

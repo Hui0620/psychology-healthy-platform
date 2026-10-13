@@ -39,9 +39,10 @@ University mental-health data is fragmented across the campus hospital, the coun
 ```
 platform-frontend/   Vue 3 web console
 platform-backend/    Spring Boot 3 multi-module backend (web/service/dao/api/common + db migrations)
+blockchain/          FISCO BCOS contracts (Storage.sol / Sharing.sol), Java service & setup guides
 mini-program/        WeChat mini program
 llm-finetune/        QLoRA scripts + mental-health instruction dataset
-federated-learning/  Federated learning reproduction notes
+federated-learning/  FL experiment scripts (PFLlib multi-algorithm benchmark)
 docs/                Architecture, database, API, blockchain, FL, LLM docs
 ```
 

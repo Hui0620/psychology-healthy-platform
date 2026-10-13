@@ -43,6 +43,16 @@ cd ./system
 python main.py -data mnist -m cnn -algo FedAvg -gr 2000 -did 0
 ```
 
+如需一次性跑完算法对比（含非 IID 鲁棒性实验），可直接执行本仓库的脚本：
+
+```bash
+cd PFLlib/system
+bash <仓库路径>/federated-learning/experiments.sh mnist cnn 0
+```
+
+脚本覆盖 `FedAvg`、`FedProx`、`pFedMe`、`PerAvg`、`FedFomo`、`FedAMP`、`FedMTL`，
+并额外以 `-cdr 0.5`（50% 机构掉线）复跑一组，模拟真实协作中的不稳定机构。
+
 常用参数：
 
 | 参数 | 含义 |
